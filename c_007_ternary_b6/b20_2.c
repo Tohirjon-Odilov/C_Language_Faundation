@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main()
+{
+  int x1, x2, x3, x4, x5, x6, x7, x8, x9, x10;
+
+  printf("10 ta son kiriting: ");
+  scanf("%d %d %d %d %d %d %d %d %d %d", &x1, &x2, &x3, &x4, &x5, &x6, &x7, &x8, &x9, &x10);
+
+  if (x1 > x2 && x1 > x3 && x1 > x4 && x1 > x5 && x1 > x6 && x1 > x7 && x1 > x8 && x1 > x9 && x1 > x10)
+  {
+    printf("Maxsimal son: %d", x1);
+  }
+  else if (x2 > x3 && x2 > x4 && x2 > x5 && x2 > x6 && x2 > x7 && x2 > x8 && x2 > x9 && x2 > x10)
+  {
+    printf("Maxsimal son: %d", x2);
+  }
+  else if (x3 > x4 && x3 > x5 && x3 > x6 && x3 > x7 && x3 > x8 && x3 > x9 && x3 > x10)
+  {
+    printf("Maxsimal son: %d", x3);
+  }
+  else if (x4 > x5 && x4 > x6 && x4 > x7 && x4 > x8 && x3 > x9 && x4 > x10)
+  {
+    printf("Maxsimal son: %d", x4);
+  }
+  else if (x5 > x6 && x5 > x7 && x5 > x8 && x5 > x9 && x5 > x10)
+  {
+    printf("Maxsimal son: %d", x5);
+  }
+  else if (x6 > x7 && x6 > x8 && x6 > x9 && x6 > x10)
+  {
+    printf("Maxsimal son: %d", x6);
+  }
+  else if (x7 > x8 && x7 > x9 && x7 > x10)
+  {
+    printf("Maxsimal son: %d", x7);
+  }
+  else if (x8 > x9 && x8 > x10)
+  {
+    printf("Maxsimal son: %d", x8);
+  }
+  else if (x9 > x10)
+  {
+    printf("Maxsimal son: %d", x9);
+  }
+  else
+  {
+    printf("Maxsimal son: %d", x10);
+  }
+
+  return 0;
+}
