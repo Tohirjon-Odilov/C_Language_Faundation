@@ -6,8 +6,10 @@ int main()
 	int a,b;
 	int res = 0;
 
-	printf("Son kiriting: ");
-	scanf("%d %d", &a, &b);
+	printf("a = ");
+	scanf("%d", &a);
+	printf("b = ");
+	scanf("%d", &b);
 
 	do{
 		res += a;

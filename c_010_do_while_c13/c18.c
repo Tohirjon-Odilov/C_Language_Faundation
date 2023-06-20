@@ -18,5 +18,13 @@ int main()
 			printf("%d\n", res);
 		} while (0 < num);
 	}
+	else if (num == 0)
+	{
+		printf("Kirtilgan son 0 ga teng!!");
+	}
+	else
+	{
+		printf("Manfiy son kiritdingiz!!!");
+	}
 	return 0;
 }

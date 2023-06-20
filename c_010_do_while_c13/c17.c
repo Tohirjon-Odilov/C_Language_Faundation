@@ -11,7 +11,7 @@ int main()
 	scanf("%d", &n);
 
 	do{
-		res = res + i;
+		res += i;
 		i++;
 	}while(i <= n);
 
