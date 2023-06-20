@@ -4,17 +4,18 @@ int main()
 {
 #if 1
 
-   int n;
-   int i = 1;
+   int singleNum, max, num;
    printf("Son kiriting: ");
+   scanf("%d", &num);
 
-   if (n > 0)
+   while (num > 0)
    {
-      while (i < n)
-      {
-         printf("%d", 1 % 10);
-         n /= 10;
-      }
+      singleNum = num % 10;
+      num /= 10;
+      max = singleNum > max ? singleNum : max;
    }
+   printf("%d\n", max);
+
 #endif
+   return 0;
 }
