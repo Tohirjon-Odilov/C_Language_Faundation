@@ -2,7 +2,7 @@
 
 int main()
 {
-	int a, i = 1;
+	int a, i = 0;
 	int res = 0;
 
 	printf("Son kiriting: ");
@@ -47,7 +47,7 @@ int main()
 	printf("Faqat 5 bo'lingandagi sonlar yig'indisi: %d", res);
 
 #endif
-#if 1
+#if 0
 
 	while(a >= i){
 		if(!(i % 2))
@@ -55,6 +55,13 @@ int main()
 		i++;
 	}
 	printf("Juft sonlar soni: %d", res);
+
+#endif
+#if 0 // 6
+
+	while(a >= i){
+		if
+	}
 
 #endif
 	return 0;
