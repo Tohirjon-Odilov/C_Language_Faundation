@@ -9,7 +9,7 @@ int main()
     a = k / n;
     f = k % n;
     x = n - f;
-    l = x % n;
+	l = x % n;
     printf("%d %d %d", a, f, l);
     return 0;
 }

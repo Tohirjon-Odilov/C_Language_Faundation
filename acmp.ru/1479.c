@@ -3,18 +3,22 @@
 int main()
 {
 
-    long long int a, b, i, res = 0, sum = 0;
+	int a,b,q = 0, r = 0;
+	scanf("%d %d", &a,&b);
 
-    scanf("%lld %lld", &a, &b);
+	if(a > 0 && b> 0 || a > 0 && b < 0){
+		q = a / b;
+		r = a - (q * b);
+	}
+	if(a < 0 && b > 0){
+		q = a / b - 1;
+		r = a - (q * b);
+	}
+	if(a < 0 && b < 0){
+		q = a / b + 1;
+		r = a - (q * b);
+	}
 
-    while (a > i)
-    {
-        res = i * b;
-        if (res < a)
-            sum = a - res;
-        i++;
-    }
-    printf("%lld\n", sum);
-
+	printf("%d", r);
     return 0;
 }
