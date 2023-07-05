@@ -56,5 +56,6 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "files.associations": {
     "stdio.h": "c"
-  }
+  },
+  "C_Cpp_Runner.useLinkTimeOptimization": false
 }
