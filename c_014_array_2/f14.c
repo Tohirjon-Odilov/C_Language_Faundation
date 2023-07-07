@@ -12,7 +12,7 @@ int main()
 		arr[i] = rand() % 100;
 	}
 
-	int second_min;
+	int min = arr[0];
 
 	for(int i = 0; i < 10; i++){
 		printf("%d ", arr[i]);
@@ -20,35 +20,36 @@ int main()
 
 	puts("");
 
-	for(int i = 0; i < 10; ++i){
-        for(int j = i + 1; j < 10; ++j){
-            if(arr[i] > arr[j]){
-                second_min = arr[i];
-                arr[i] = arr[j];
-                arr[j] = second_min;
-            }
-        }
-		second_min = arr[1];
-    }
+//	for(int i = 0; i < 10; ++i){
+//        for(int j = i + 1; j < 10; ++j){
+//            if(arr[i] > arr[j]){
+//                second_min = arr[i];
+//                arr[i] = arr[j];
+//                arr[j] = second_min;
+//            }
+//        }
+//		second_min = arr[1];
+//    }
 
 
-//	for(int i = 0; i < 10; i++){
-//		if(arr[i] < min)
-//			min = arr[i];
-//	}
-//	int q = 0;
-//	for(int i = 0; i < 10; i++){
-//		if(arr[i] == min){
-////			q = i % 9;
-////			second_min = arr[q];
-//			continue;
-//		}
-//		for(int i = 0; i < 9; i++){
-//			if()
-//		}
-////		if(min == second_min || arr[i] < second_min)
-////			second_min = arr[i];
-//	}
+	for(int i = 0; i < 10; i++){
+		if(arr[i] < min)
+			min = arr[i];
+	}
+
+	int second_min;
+
+	for(int i = 0; i < 10; i++){
+		if(arr[i] != min){
+			second_min = arr[i];
+			break;
+		}
+	}
+
+	for(int i = 0; i < 10; i++){
+		if(arr[i] < second_min && arr[i] != min)
+			second_min = arr[i];
+	}
 
 
 

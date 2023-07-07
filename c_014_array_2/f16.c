@@ -30,7 +30,7 @@ int main()
 		if(min > arr[i])
 			min = arr[i];
 	}
-// 5 6 9 8 7 4 3 2 1
+
 	int max_n = 1, min_n = 1;
 	int res = 0;
 

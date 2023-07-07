@@ -29,12 +29,6 @@ int main()
 		}
 	}
 
-//	for(int i = 0; i < n; i++){
-//		if(arr[i] > min)
-//		count++;
-//		else break;
-//	}
-
 	printf("%d", count);
 
 	return 0;
