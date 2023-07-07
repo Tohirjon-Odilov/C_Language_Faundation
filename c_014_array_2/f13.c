@@ -8,13 +8,13 @@ int main()
 	int n;
 	printf("Array uzunligini kiriting: "); scanf("%d", &n);
 	int arr[n];
-	int count = 0;
 
 	for(int i = 0; i < n; i++){
 		arr[i] = rand() % n;
 	}
 
 	int min = arr[0];
+	int count = 0;
 
 	for(int i = 0; i < n; i++){
 		printf("%d ", arr[i]);
@@ -23,15 +23,17 @@ int main()
 	puts("");
 
 	for(int i = 1; i < n; i++){
-		if(min > arr[i])
+		if(min > arr[i]){
 			min = arr[i];
+			count = i;
+		}
 	}
 
-	for(int i = 0; i < n; i++){
-		if(arr[i] > min)
-			count++;
-		else break;
-	}
+//	for(int i = 0; i < n; i++){
+//		if(arr[i] > min)
+//		count++;
+//		else break;
+//	}
 
 	printf("%d", count);
 
