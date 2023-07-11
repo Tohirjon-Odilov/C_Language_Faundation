@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+void fill(){
+	for(int i = 0; i < n; i++){
+		arr[i] = rand() % 15 - 5;
+		printf("%d ", arr[i]);
+	}
+}
+
 int main()
 {
 	srand(time(0));
@@ -9,14 +16,9 @@ int main()
 	scanf("%d", &n);
 	int arr[n];
 
-	for(int i = 0; i < n; i++){
-		arr[i] = rand() % 15 - 5;
-		printf("%d ", arr[i]);
-	}
 	puts("");
 	first_index = arr[0];
 	last_index = arr[n-1];
-
 	arr[0] = last_index;
 	arr[n-1] = first_index;
 
