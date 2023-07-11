@@ -3,10 +3,7 @@
 #include <time.h>
 
 void fill_arr(int n, int arr[]){
-	for(int i = 0; i < n; i++){
-		arr[i] = rand() % 15 - 5;
-		printf("%d ", arr[i]);
-	}
+	for(int i = 0; i < n; i++) arr[i] = rand() % 15 - 5;
 }
 
 void change(int n, int arr[]){
@@ -17,7 +14,12 @@ void change(int n, int arr[]){
 	}
 	int temp = arr[max_i];
 	arr[max_i] = arr[min_i];
-	arr[min_i] = t;
+	arr[min_i] = temp;
+}
+
+void output(int n, int arr[]){
+	for(int i = 0; i < n; i++) printf("%d ", arr[i]);
+	puts("");
 }
 
 int main()
@@ -28,12 +30,9 @@ int main()
 	int arr[n];
 
 	fill_arr(n,arr);
-	puts("");
+	output(n,arr);
 	change(n,arr);
-
-	for(int i = 0; i < n; i++){
-		printf("%d ", arr[i]);
-	}
+	output(n,arr);
 
 	return 0;
 }
