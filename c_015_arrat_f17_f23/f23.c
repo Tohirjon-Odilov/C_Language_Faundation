@@ -9,25 +9,18 @@ int array_size(int n){
 	return count;
 }
 
-int array_seperate(int n, int arr_length, int arr[]){
-	for(int i = n; i > 0; i/=10){
-		arr[arr_length] = i % 10;
-		for(int j = arr_length; j > 0; j--)
-			arr[arr_length] = arr[arr_length] * 10;
-		arr_length++;
-	}
-	return arr_length;
+void array_seperate(int n,int count,int arr[]){
+	int room = 1;
+	for(int i = 0; i < count-1; i++) room*=10;
+
+	for(int i = 0; room > 0; n %= room, room/=10, i++)
+		arr[i] = n / room * room;
 }
 
-int array_sort(int arr_length, int arr[]){
-	int a;
-	for(int i = 0; i < arr_length; i++)
-		for(int j = 0; j < arr_length; j++)
-			if(arr[i] > arr[j]){
-				a = arr[i];
-				arr[i] = arr[j];
-				arr[j] = a;
-			}
+void output(int n, int arr[], int size){
+	for(int i = 0; i < size; i++)
+		printf("%d ", arr[i]);
+	puts("");
 }
 
 int main()
@@ -35,12 +28,10 @@ int main()
 	int n;
 	scanf("%d", &n);
 
-	int arr[array_size(n)];
-	int arr_length = array_seperate(n, arr_length, arr);
-	array_sort(arr_length,arr);
+	int size = array_size(n);
+	int arr[size];
 
-	for(int i = 0; i < arr_length; i++)
-		printf("%d ", arr[i]);
-
+	array_seperate(n,size,arr);
+	output(n,arr,size);
 	return 0;
 }
