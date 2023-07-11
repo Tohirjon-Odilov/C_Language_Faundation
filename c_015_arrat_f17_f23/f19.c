@@ -2,25 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-void fill_arr(int n, int arr[]){
+void fill_arr(int arr[], int n){
 	for(int i = 0; i < n; i++)
-		arr[i] = 8 + rand() % 13;
+		arr[i] = 8 + rand() % 21;
 }
 
-void change(int n, int arr[], int k){
-	int temp;
-	for(int i = 0; i < k; i++){
-		temp = arr[0];
-		for(int j = 0; j < n-1; j++)
-			arr[j] = arr[j+1];
-		arr[n-1] = temp;
-	}
-}
-
-void output(int n, int arr[]){
+void output(int arr[], int n){
 	for(int i = 0; i < n; i++)
 		printf("%d ", arr[i]);
 	puts("");
+}
+
+void shift_arr(int arr[], int n){
+	int first_number = arr[0];
+	for(int i = 0; i < n-1; i++)
+		arr[i] = arr[i+1];
+	arr[n-1] = first_number;
 }
 
 int main()
@@ -30,10 +27,12 @@ int main()
 	scanf("%d %d", &n, &k);
 	int arr[n];
 
-	fill_arr(n,arr);
-	output(n,arr);
-	change(n,arr,k);
-	output(n,arr);
+	fill_arr(arr,n);
+	output(arr,n);
+	k %= n;
+	for(int i = 0; i < k; i++)
+		shift_arr(arr,n);
+	output(arr,n);
 
 	return 0;
 }
