@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void get_addres(int *id_adres){
+void get_addres(int *id_addres){
 	printf("%p", id_addres);
 }
 

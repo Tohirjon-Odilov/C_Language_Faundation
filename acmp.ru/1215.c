@@ -1,48 +1,31 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-	int n, index;
+	int n, index, min_i = 0;
 	scanf("%d", &n);
 	int arr[n];
 	for(int i = 0; i < n; i++){
 		scanf("%d", &arr[i]);
 	}
 
+	int min = abs(index - arr[0]);
 	scanf("%d", &index);
 
-	int y, x = 0, min, res;
-	if(n < index){
-		res = arr[n-1];
-		x += ++res;
-	}
-	else{
-		res = arr[index - 1];
-		x += ++res;
-	}
-
-	for(int i = 0; i < n; i++){
-		if(arr[i] == res){//2 < 4
-//			puts("1 if");
-//			printf("x = %d", x);
-			for(int j = i + 1; j < x; j++ ){
-//				printf("kirmadi %d %d", j, x);
-				min = arr[j];
-				if(min > arr[res--]){
-					min = arr[res];
-//					puts("salom");
-				}
-//				else min = arr[j];
+	for(int i = 1; i < n; i++){
+		int farq = abs(index - arr[i]);
+		if(min > abs(index - arr[i])){
+			min = abs(index - arr[i]);
+			min_i = i;
+		}
+		else if(min == farq){
+			if (arr[min_i] > arr[i]){
+				min = farq;
+				min_i = i;
 			}
-			res = min;
-		}else{
-			printf("else %d\n", res);
 		}
 	}
-
-
-//	printf("tashqi %d", res);
-
-
+	printf("%d", arr[min_i]);
 	return 0;
 }
