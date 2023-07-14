@@ -2,32 +2,36 @@
 #include<stdlib.h>
 #include<time.h>
 
+void output(int arr[], int n);
+
+void fill_arr(int arr[], int n){
+	for(int i = 0; i < n; i++) arr[i] = rand()%10;
+	output(arr,n);
+}
+
+void output(int arr[], int n){
+	for(int i = 0; i < n; i++){
+		printf("%d ", arr[i]);
+	}
+	puts("");
+}
+
+void summa(int arr[], int n, int *sum){
+	*sum = 0;
+	for(int i = 0; i < n; i++){
+		*sum += arr[i];
+	}
+}
+
 int main(){
-    srand(time(0));
+	srand(time(0));
+	int n,sum;
+	scanf("%d", &n);
+	int arr[n];
 
-    int n;
-
-    printf("n = "); scanf("%d", &n);
-
-    int arr[n];
-
-    for(int i = 0; i < n; i++){
-        arr[i] = 1+rand()%9;
-        printf("%d ", arr[i]);
-    }
-    puts("");
-    int *sum = &arr[n];
-    *sum = 0;
-    for(int i = 1; i < n; i++){
-        *sum += arr[i];
-    }
-
-    printf("sum = %d\n", *sum);
-
-    for(int i = 0; i < n; i++){
-        printf("%d ", arr[i]);
-    }
-    puts("");
+	fill_arr(arr,n);
+	summa(arr,n,&sum);
+	printf("%d", sum);
 
     return 0;
 }
