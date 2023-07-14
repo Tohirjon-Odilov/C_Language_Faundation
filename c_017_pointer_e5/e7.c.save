@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void output(int arr[], n);
+
+void 
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	int arr[n];
+
+	fill_arr(arr,n);
+	add_arr();
+
+	return 0;
+}
