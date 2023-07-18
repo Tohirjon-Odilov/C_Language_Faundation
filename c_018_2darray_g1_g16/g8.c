@@ -17,11 +17,13 @@ int main()
 		puts("   ");
 	}
 	puts("");
-	for(int i = 0; i < 1; i++){
-		for(int j = 0; j < n; j++){
-			printf("%d-ustunda %d ",j+1,arr[n-1][j]);
-			puts("");
+
+	for(int i = 0; i < n; i++){
+		int max = arr[0][i];
+		for(int j = 1; j < n; j++){
+			if(arr[i][j] > max) max = arr[j][i];
 		}
+		printf("%d-ustunda %d\n",i+1,max);
 	}
 
 	return 0;

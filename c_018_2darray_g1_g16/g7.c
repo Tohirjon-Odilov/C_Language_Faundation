@@ -17,11 +17,13 @@ int main()
 		puts("   ");
 	}
 	puts("");
+
 	for(int i = 0; i < n; i++){
-		for(int j = 0; j < 1; j++){
-			printf("%d - qatorda %d ",i+1,arr[i][n-1]);
+		int max = arr[i][0];
+		for(int j = 0; j < n; j++){
+			if(max<arr[i][j]) max = arr[i][j];
 		}
-		puts("");
+		printf("%d - qatorda %d\n",i+1,max);
 	}
 
 	return 0;
