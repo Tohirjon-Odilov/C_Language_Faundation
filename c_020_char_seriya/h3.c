@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool isAlpha(char x){
-	x += x >= 'A' && x <= 'Z'?32:0;
-	return 'a' <= x && 'z' >= x;
+bool isDigit(char x){
+	return '0' <= x && '9' >= x;
 }
 
 int main()
@@ -12,7 +11,7 @@ int main()
 	scanf("%[^\n]s", text);
 
 	for(int i = 0; text[i] != '\0'; i++){
-		if(isAlpha(text[i])){
+		if(isDigit(text[i])){
 			printf("%c", text[i]);
 		}
 	}
