@@ -2,7 +2,8 @@
 #include <stdbool.h>
 
 bool isAlNum(char x){
-	return 'a' == x || x == 'i' || x == 'u' || x == 'e' || x == 'o';
+	x += 'A' <= x && x <= 'Z' ? 32 : 0;
+	return 'a' != x && x != 'i' && x != 'u' && x != 'e' && x != 'o';
 }
 
 int main()
@@ -14,6 +15,7 @@ int main()
 	for(int i = 0; text[i] != '\0'; i++){
 		if(isAlNum(text[i])){
 			countVowel++;
+			printf("%c", text[i]);
 		}
 	}
 	printf("%d", countVowel);
