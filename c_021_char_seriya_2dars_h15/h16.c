@@ -6,18 +6,28 @@ int main()
 {
 	char password[100];
 	fgets(password, 100, stdin);
-	int num = 0, az = 0, AZ = 0, punc = 0;
-
-	for(int i = 0; password[i] != '\0'; i++){
-		if(isdigit(password[i])) num = 1;
-		else if(islower(password[i])) az = 1;
-		else if(isupper(password[i])) AZ = 1;
-		else if(ispunct(password[i])) punc = 1;
+	int isDigit = 0, isLower = 0, isUpper = 0, isPunct = 0;
+	if (strlen(password) < 8)
+	{
+		printf("Kuchsiz parol => murakkablashtiring!!!");
+		return 0;
+	}
+	for (int i = 0; password[i] != '\0'; i++)
+	{
+		if (isdigit(password[i]))
+			isDigit = 1;
+		else if (islower(password[i]))
+			isLower = 1;
+		else if (isupper(password[i]))
+			isUpper = 1;
+		else if (ispunct(password[i]))
+			isPunct = 1;
 	}
 
-	if(strlen(password) > 8 && num && az && AZ && punc)
+	if (isDigit && isLower && isUpper && isPunct)
 		printf("Murakkab");
-	else printf("Kuchsiz parol => murakkablashtiring!!!");
+	else
+		printf("Kuchsiz parol => murakkablashtiring!!!");
 
 	return 0;
 }

@@ -5,20 +5,22 @@
 int main()
 {
 	char str[20];
-	fgets(str,20,stdin);
+	fgets(str, 20, stdin);
 
 	int isnum = 1;
 
-	for(int i = 0; str[i] != '\0'; i++){
-		if(isdigit(str[i])){
+	for (int i = 0; str[i] != '\0'; i++)
+	{
+		if (isdigit(str[i]))
+		{
 			isnum++;
-			printf("kirdi");
 		}
 	}
 
-	if(isnum == strlen(str))
+	if (isnum == strlen(str))
 		printf("Faqat sonlardan iborat");
-	else printf("Sondan boshqa belgi kiritilgan!!!");
+	else
+		printf("Sondan boshqa belgi kiritilgan!!!");
 
 	return 0;
 }
