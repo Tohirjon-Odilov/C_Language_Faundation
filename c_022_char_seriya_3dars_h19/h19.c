@@ -3,18 +3,15 @@
 
 int main()
 {
-	char name[20];
-	char second_name[20];
-	scanf("%s", name);
-	scanf("%s", second_name);
+    char name[32];
+    char second_name[32];
+    scanf("%s", name);
+    scanf("%s", second_name);
 
-	char new_second_name[20];
+    strcpy(second_name+strlen(second_name)/2, "");
+    strcpy(second_name+strlen(second_name), name+strlen(name)/2);
 
-	strcpy(new_second_name, second_name+strlen(second_name)/2);
-	strcpy(name, name+strlen(name)/2);
-	strcat(new_second_name,name);
+    puts(second_name);
 
-	puts(new_second_name);
-
-	return 0;
+    return 0;
 }
