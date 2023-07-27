@@ -17,32 +17,32 @@ Output: "Salom bolalar yaxshimi qaley."
 int main()
 {
 	char text[32];
-	char firstChar[1000];
+	char firstChar[1000] = {};
 	int size = 0;
 
 	while(strcmp(text, "stop")){
 		scanf("%s", text);
 		size++;
 		int len = strlen(text);
-		if(strcmp(text,"stop")){
-			if(size == 1)
-				text[0] = toupper(text[0]);
-			if(size != 5)strcat(text, " ");
-			if(ispunct(text[len-1]) && size == 5)
-				text[len-1] = '.';
-			strcat(firstChar, text);
-			if(size == 5){
-				if(!ispunct(text[len-1]))
-					strcat(firstChar, ".");
-				strcat(firstChar, " ");
-				size = 0;
-			}
+
+		// gapni birinchi so'zini bosh harf bilan boshlash
+		if(size == 1)
+			text[0] = toupper(text[0]);
+
+		if(ispunct(text[len-1]) && size == 5)
+			text[len-1] = '.';
+		strcat(firstChar, text);
+		if(size == 5){
+			if(!ispunct(text[len-1]))
+				strcat(firstChar, ".");
+//			strcat(firstChar, " ");
+			size = 0;
 		}
+		strcat(firstChar, " ");
 	}
 
 	int new_len = strlen(firstChar);
-//	if(firstChar[new_len] != '.') strcpy(firstChar+new_len-1, ".");
-	if(size <= 5 && ispunct(firstChar[new_len-2]))
+	if(size == 5 && ispunct(firstChar[new_len-2]))
 		firstChar[new_len-2] = '.';
 	else firstChar[new_len-1] = '.';
 	puts(firstChar);
