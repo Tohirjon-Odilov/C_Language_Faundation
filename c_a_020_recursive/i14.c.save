@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<string.h>
+
+void string(char a[], int len){
+	if()
+}
+
+int main(){
+	char a[100];
+	scanf("%[^\n]s", &a);
+	int len = strlen(a);
+	string(a, len);
+}
