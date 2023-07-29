@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h>
 
 typedef struct market{
@@ -26,8 +27,12 @@ void print_market(MARKET new){
 	puts("");
 }
 
-void print_order_market(MARKET market){
-	if(!strcmp(market.type, "gipermarket") && market.stare > 2){
+void print_order_market(MARKET market, int n){
+	market.type[0] = toupper(market.type[0]);
+	for(int i = 1; i < n; i++){
+		market.type[i] = tolower(market.type[i]);
+	}
+	if(!strcmp(market.type, "Gipermarket") && market.stare > 2){
 		puts("============SORT==============");
 		print_market(market);
 	}
@@ -47,11 +52,7 @@ int main()
 	puts("");
 
 	for(int i = 0; i < n; i++){
-		print_market(number_of_market[i]);
-	}
-
-	for(int i = 0; i < n; i++){
-		print_order_market(number_of_market[i]);
+		print_order_market(number_of_market[i], strlen(number_of_market[0].type));
 	}
 
 	return 0;
