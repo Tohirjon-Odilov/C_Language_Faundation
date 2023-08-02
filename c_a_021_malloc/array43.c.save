@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void fill_arr(int ){}
+
+void sort(int arr[], int n){
+	for(int i = 0; i < n; i++){
+		for(int j = 0; i < n; j++){
+			if(i > j){
+				int a = i;
+				i = j;
+				j = i;
+			}
+		}
+	}
+
+}
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	int *arr = malloc(n*sizeof(int));
+
+	fill_arr(arr,n);
+
+	return 0;
+}
