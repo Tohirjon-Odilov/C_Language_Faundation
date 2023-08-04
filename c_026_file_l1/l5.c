@@ -4,15 +4,15 @@ int main()
 {
 	int n=10;
 	int nums[n];
-	int i = 0, j = 0;
+	int j = 1;
 	FILE *fp = fopen("l5.txt", "r");
 
-	while(fscanf(fp, "%d", &nums[i++]) != EOF){}
-
-	for(int i = n-1; i > 0; i--){
-		if(!(nums[i] % 2))
-			printf("%d ",nums[i]);
+	for(int i = n; i > 0; i--){
+		fscanf(fp, "%d", &nums[i]);
 	}
-
+	while(n >= j){
+		!(nums[j] % 2) && printf("%d ", nums[j]);
+		j++;
+	}
 	return 0;
 }
