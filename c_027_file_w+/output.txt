@@ -1,0 +1,9 @@
+1.Apple
+2.Google
+3.Amazon
+5.Tesla
+6.Berkshire
+7.Samsung
+8.Facebook
+9.Walmart
+10.Toyota

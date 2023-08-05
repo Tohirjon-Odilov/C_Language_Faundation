@@ -1,48 +1,115 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-void enter_temp(float temps[]){
-	static int i = 1;
-	temps = malloc(i*sizeof(int));
-//	for(int i = 0; i < n; i++){
-//		scanf("%f", temps[0]);
-//	}
-//	printf("%d", n);
-	temps = (float*)realloc(temps, i++);
-//	float *new_temps =
-}
+int main(){
 
-int main()
-{
-	int stop = 1;
-	int check;
-	float temps[1];
+    int input, i = 1, count = 0;
+    float max, min, medium;
+    float* arr = (float*)malloc(i * sizeof(float));
+    
+    if(arr == NULL){
+        printf("Error\n");
+        exit(0);
+    }
 
-	while(stop){
-		puts("Menyuni tanlang: ");
-		puts("Harorat kiritish uchun <<1>> ni bosing.");
-		puts("Eng yuqori haroratni ko'rish uchun <<2>> ni bosing.");
-		puts("O'rtacha haroratni ko'rish uchun <<3>> ni bosing.");
-		puts("Eng past haroratni ko'rish uchun <<4>> ni bosing.");
-		puts("Ob - havo ma'lumotlarini ko'rish uchun <<5>> ni bosing.");
-		puts("Dasturni to'xtatish uchun <<0>> ni bosing.");
-		printf("Tepdagilardan birini kiriting: "); scanf("%d", &check);
+    system("clear");
 
-		if(check == 1){
-			enter_temp(temps);
-		}else if(check == 2){
-//			higest_temp();
-		}else if(check == 3){
-//			avrg_data();
-		}else if(check == 4){
-//			lowest_temp();
-		}else if(check == 5){
-//			print_temp();
-		}else if(check == 0){
-			stop = 0;
-			puts("Dasturdan chiqildi.");
-		}
-	}
+    while(true){
 
-	return 0;
+        if(count != 0){
+            printf("Siz kiritgan malumotlar >>> ");
+            for(int h = 0; h < count; h++){
+                printf("|%g ",arr[h]);
+            }
+            puts("");
+        }
+
+        printf("Soat 0%d:00 dagi ob-havo malumotni kiriting\n\n",count);
+
+        printf("Haroratni kiritish >>> 1\n");
+        printf("Eng yuqori haroratni bilish >>> 2\n");
+        printf("O'rtacha haroratni bilish >>> 3\n");
+        printf("Eng past haroratni bilish >>> 4\n");
+        printf("Chiqish >>> 5\n");
+
+        printf("\nQaysi birini tanlaysiz >>> ");
+        scanf("%d",&input);
+
+        if(input == 1){
+            system("clear");
+            count++;
+            arr = realloc(arr, i++);
+            printf("\nHaroratni kiriting: ");
+            scanf("%f",&arr[i-2]);
+            puts("");
+            system("clear");
+        }
+        else if(input == 2){
+            system("clear");
+            if(count == 1){
+                printf("\nEng yuqori harorat---> %g C\n",arr[0]);
+            }
+            else if(count == 0){
+                printf("\nSiz harorat kiritmagansiz\n");
+            }
+            else{
+                max = arr[0];
+                for(int j = 1; j < count; j++){
+                    if(max < arr[j]){
+                        max = arr[j];
+                    }
+                }
+                printf("\nEng yuqori harorat---> %g C\n",max);
+            }
+            puts("");
+        }
+        else if(input == 3){
+            system("clear");
+            if(count == 1){
+                printf("\nO'rtacha harorat---> %g C\n",arr[0]);
+            }
+            else if(count == 0){
+                printf("\nSiz harorat kiritmagansiz\n");
+            }
+            else{
+                medium = 0;
+                for(int j = 0; j < count; j++){
+                    medium+=arr[j];
+                }
+                printf("\nO'ratcha harorat---> %g C\n",(float)medium/count);
+            }
+            puts("");
+        }
+        else if(input == 4){
+            system("clear");
+            if(count == 1){
+                printf("\nEng past harorat---> %g C\n",arr[0]);
+            }
+            else if(count == 0){
+                printf("\nSiz harorat kiritmagansiz\n");
+            }
+            else{
+                min = arr[0];
+                for(int j = 1; j < count; j++){
+                    if(min > arr[j]){
+                        min = arr[j];
+                    }
+                }
+                printf("\nEng past harorat---> %g C\n",min);
+            }
+            puts("");
+        }
+        else if(input == 5){
+            system("clear");
+            free(arr);
+            break;
+        }
+        else{
+            printf("Error!\n");
+            exit(1);
+        }
+    }
+
+    return 0;
 }
