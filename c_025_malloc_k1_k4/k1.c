@@ -46,7 +46,7 @@ int main(){
     int n;
     printf("n = ");
     scanf("%d", &n);
-    
+ 
     CAR* arr = (CAR*)malloc(n * sizeof(CAR));
 
     if(arr == NULL || n == 0){

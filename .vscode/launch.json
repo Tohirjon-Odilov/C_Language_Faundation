@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/coder/Documents/foundation/c",
-      "program": "/home/coder/Documents/foundation/c/build/Debug/outDebug",
+      "cwd": "/home/coder/Documents/foundation/c/c_028_file_fgetc",
+      "program": "/home/coder/Documents/foundation/c/c_028_file_fgetc/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

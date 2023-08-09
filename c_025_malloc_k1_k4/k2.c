@@ -2,114 +2,45 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-int main(){
+int main()
+{
+	int num, max, min, avg;
+	int j = 1, addaction = 0;
+	float *data = (float *)malloc(j * sizeof(float));
 
-    int input, i = 1, count = 0;
-    float max, min, medium;
-    float* arr = (float*)malloc(i * sizeof(float));
-    
-    if(arr == NULL){
-        printf("Error\n");
-        exit(0);
-    }
+	while (1)
+	{
+		puts("OB-havo ma'lumotlarini kiritish uchun <<1>> ni bosing.");
+		puts("Eng yuqori haroratni ko'rish uchun <<2>> ni bosing.");
+		puts("Eng past haroratni ko'rish uchun <<3>> ni bosing.");
+		puts("O'rtacha haroratni ko'rish uchun <<4>> ni bosing.");
+		puts("Chiqish uchun <<0>> ni bosing.\n");
+		printf("SON KIRITING: "); scanf("%d", &num);
 
-    system("clear");
+		if (num == 1)
+		{
+			printf("Kiriting: ");
+			scanf("%f", &data[j++]);
+			data = realloc(data, j);
+		}
+		else if (num == 2)
+		{
+		}
+		else if (num == 3)
+		{
+		}
+		else if (num == 4)
+		{
+			int size = sizeof(data) / sizeof(data[0]);
+			for (int i = 0; i < j; i++)
+				addaction += data[i];
+			printf("%g",(float) addaction/size);
+		}
+		else if (num == 0)
+		{
+			exit(0);
+		}
+	}
 
-    while(true){
-
-        if(count != 0){
-            printf("Siz kiritgan malumotlar >>> ");
-            for(int h = 0; h < count; h++){
-                printf("|%g ",arr[h]);
-            }
-            puts("");
-        }
-
-        printf("Soat 0%d:00 dagi ob-havo malumotni kiriting\n\n",count);
-
-        printf("Haroratni kiritish >>> 1\n");
-        printf("Eng yuqori haroratni bilish >>> 2\n");
-        printf("O'rtacha haroratni bilish >>> 3\n");
-        printf("Eng past haroratni bilish >>> 4\n");
-        printf("Chiqish >>> 5\n");
-
-        printf("\nQaysi birini tanlaysiz >>> ");
-        scanf("%d",&input);
-
-        if(input == 1){
-            system("clear");
-            count++;
-            arr = realloc(arr, i++);
-            printf("\nHaroratni kiriting: ");
-            scanf("%f",&arr[i-2]);
-            puts("");
-            system("clear");
-        }
-        else if(input == 2){
-            system("clear");
-            if(count == 1){
-                printf("\nEng yuqori harorat---> %g C\n",arr[0]);
-            }
-            else if(count == 0){
-                printf("\nSiz harorat kiritmagansiz\n");
-            }
-            else{
-                max = arr[0];
-                for(int j = 1; j < count; j++){
-                    if(max < arr[j]){
-                        max = arr[j];
-                    }
-                }
-                printf("\nEng yuqori harorat---> %g C\n",max);
-            }
-            puts("");
-        }
-        else if(input == 3){
-            system("clear");
-            if(count == 1){
-                printf("\nO'rtacha harorat---> %g C\n",arr[0]);
-            }
-            else if(count == 0){
-                printf("\nSiz harorat kiritmagansiz\n");
-            }
-            else{
-                medium = 0;
-                for(int j = 0; j < count; j++){
-                    medium+=arr[j];
-                }
-                printf("\nO'ratcha harorat---> %g C\n",(float)medium/count);
-            }
-            puts("");
-        }
-        else if(input == 4){
-            system("clear");
-            if(count == 1){
-                printf("\nEng past harorat---> %g C\n",arr[0]);
-            }
-            else if(count == 0){
-                printf("\nSiz harorat kiritmagansiz\n");
-            }
-            else{
-                min = arr[0];
-                for(int j = 1; j < count; j++){
-                    if(min > arr[j]){
-                        min = arr[j];
-                    }
-                }
-                printf("\nEng past harorat---> %g C\n",min);
-            }
-            puts("");
-        }
-        else if(input == 5){
-            system("clear");
-            free(arr);
-            break;
-        }
-        else{
-            printf("Error!\n");
-            exit(1);
-        }
-    }
-
-    return 0;
+	return 0;
 }
