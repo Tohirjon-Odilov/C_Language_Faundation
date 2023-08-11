@@ -18,7 +18,7 @@ int main()
 		while(fscanf(fr, "%s", month) != EOF){
 			i++;
   			if(i == tch(date[3],date[4])){
-				printf("%c%c-%s, %c%c%c%c-yil\n",date[0]=='0'?'\0':date[0],
+				fprintf(fw,"%c%c-%s, %c%c%c%c-yil\n",date[0]=='0'?' ':date[0],
 					date[1],month,date[6],date[7],date[8],date[9]);
 				break;
 			}
